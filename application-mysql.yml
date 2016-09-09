@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    platform: mysql
+    url: jdbc:mysql://${DOCKER_IP}:3306/${ng.db.name}?useUnicode=yes&characterEncoding=UTF-8&useSSL=false&requireSSL=false
+    username: ${ng.db.username}
+    password: ${ng.db.password}
+    # see org.apache.tomcat.jdbc.pool.PoolConfiguration
+    max-active: 100
+    max-idle: 8
+    min-idle: 8
+    initial-size: 10
+    validation-query: SELECT 1
+    test-on-borrow: false
+    test-on-return: true
+    test-while-idle: true
+    time-between-eviction-runs-millis: 5000
+    min-evictable-idle-time-millis: 60000
+    max-wait: 30000
+    jmx-enabled: true
+
+  h2:
+    console:
+      enabled: false
+
+  jpa:
+    generate-ddl: false
+    show-sql: false
+
+flyway:
+  enabled: true

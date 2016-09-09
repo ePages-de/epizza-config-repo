@@ -1,0 +1,34 @@
+server:
+  use-forward-headers: true
+
+management:
+  context-path: /system
+
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  rabbitmq:
+    host: ${DOCKER_IP}
+    port: 5672
+    username: guest
+    password: guest
+  jpa:
+    generate-ddl: true
+    show-sql: true
+  zipkin:
+    baseUrl: "http://${DOCKER_IP}:9411"
+  sleuth:
+    sampler:
+      percentage: 1.0
+
+flyway:
+  enabled: false
+
+health:
+  config:
+    enabled: false
+
+logging:
+  level:
+    org.apache.tomcat.jdbc.pool: DEBUG
