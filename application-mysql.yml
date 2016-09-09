@@ -1,9 +1,9 @@
 spring:
   datasource:
     platform: mysql
-    url: jdbc:mysql://${DOCKER_IP}:3306/${ng.db.name}?useUnicode=yes&characterEncoding=UTF-8&useSSL=false&requireSSL=false
-    username: ${ng.db.username}
-    password: ${ng.db.password}
+    url: jdbc:mysql://${DOCKER_IP}:3306/${epizza.db.name}?useUnicode=yes&characterEncoding=UTF-8&useSSL=false&requireSSL=false
+    username: ${epizza.db.username}
+    password: ${epizza.db.password}
     # see org.apache.tomcat.jdbc.pool.PoolConfiguration
     max-active: 100
     max-idle: 8
