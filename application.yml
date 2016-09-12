@@ -9,18 +9,20 @@ spring:
     ansi:
       enabled: ALWAYS
   rabbitmq:
-    host: ${DOCKER_IP}
+    host: rabbitmq
     port: 5672
     username: guest
     password: guest
   jpa:
     generate-ddl: true
-    show-sql: true
+    show-sql: false
   zipkin:
-    baseUrl: "http://${DOCKER_IP}:9411"
+    baseUrl: "http://zipkin:9411"
   sleuth:
     sampler:
       percentage: 1.0
+  jmx:
+    enabled: false
 
 flyway:
   enabled: false
@@ -31,4 +33,18 @@ health:
 
 logging:
   level:
-    org.apache.tomcat.jdbc.pool: DEBUG
+    org.apache.tomcat.jdbc.pool: 'INFO'
+    org.hibernate: 'WARN'
+    org.hibernate.type.descriptor.java: 'OFF'
+    org.springframework.beans.factory.support: 'WARN'
+    org.springframework.boot.actuate.endpoint.mvc: 'WARN'
+    org.springframework.boot.web.servlet: 'WARN'
+    org.springframework.context.support: 'WARN'
+    org.springframework.data.rest.webmvc.BasePathAwareHandlerMapping: 'WARN'
+    org.springframework.data.rest.webmvc.RepositoryRestHandlerAdapter: 'WARN'
+    org.springframework.data.rest.webmvc.RepositoryRestHandlerMapping: 'WARN'
+    org.springframework.web.servlet.handler.SimpleUrlHandlerMapping: 'WARN'
+    org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: 'WARN'
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter: 'WARN'
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: 'WARN'
+    org.springframework.amqp.rabbit.core.RabbitAdmin: 'WARN'
