@@ -1,2 +1,4 @@
 api:
+  # deprecated.
   host: "http://${DOCKER_IP}:8082"
+  baseUri: "http://${DOCKER_IP}:8082"
