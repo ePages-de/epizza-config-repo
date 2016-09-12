@@ -1,4 +1,14 @@
 api:
-  # deprecated.
-  host: "http://${DOCKER_IP}:8082"
   baseUri: "http://${DOCKER_IP}:8082"
+
+server:
+  port: 8085
+
+logging:
+  level:
+    root: 'WARN'
+    epizza: 'INFO'
+
+spring:
+  main:
+    banner-mode: 'off'
