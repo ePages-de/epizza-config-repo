@@ -9,7 +9,7 @@ spring:
     ansi:
       enabled: ALWAYS
   rabbitmq:
-    host: rabbitmq
+    host: ${DOCKER_IP}
     port: 5672
     username: guest
     password: guest
@@ -33,18 +33,16 @@ health:
 
 logging:
   level:
+    root: 'INFO'
     org.apache.tomcat.jdbc.pool: 'INFO'
     org.hibernate: 'WARN'
     org.hibernate.type.descriptor.java: 'OFF'
+    org.javamoney: 'WARN'
     org.springframework.beans.factory.support: 'WARN'
     org.springframework.boot.actuate.endpoint.mvc: 'WARN'
     org.springframework.boot.web.servlet: 'WARN'
+    org.springframework.context.annotation.ConfigurationClassPostProcessor: 'OFF'
     org.springframework.context.support: 'WARN'
-    org.springframework.data.rest.webmvc.BasePathAwareHandlerMapping: 'WARN'
-    org.springframework.data.rest.webmvc.RepositoryRestHandlerAdapter: 'WARN'
-    org.springframework.data.rest.webmvc.RepositoryRestHandlerMapping: 'WARN'
-    org.springframework.web.servlet.handler.SimpleUrlHandlerMapping: 'WARN'
-    org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: 'WARN'
-    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter: 'WARN'
-    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: 'WARN'
+    org.springframework.data.rest.webmvc: 'WARN'
+    org.springframework.web.servlet: 'WARN'
     org.springframework.amqp.rabbit.core.RabbitAdmin: 'WARN'
