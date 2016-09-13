@@ -1,0 +1,2 @@
+logging:
+  config: "http://${DOCKER_IP}:8888/all/logstash/dev/logback.xml"
