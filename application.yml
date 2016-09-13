@@ -36,7 +36,7 @@ health:
     enabled: false
 
 logging:
-  config: http://${DOCKER_IP}:8888/all/default/dev/logback.xml
+  config: "http://${DOCKER_IP}:8888/all/default/dev/logback.xml"
   level:
     root: 'INFO'
     org.apache.tomcat.jdbc.pool: 'INFO'
