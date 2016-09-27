@@ -1,0 +1,7 @@
+hystrix:
+  command:
+    getOrder:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000

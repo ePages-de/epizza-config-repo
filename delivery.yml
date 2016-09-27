@@ -1,2 +1,15 @@
 orders:
   baseUri: "http://${DOCKER_IP}:8082/"
+
+hystrix:
+  command:
+    getOrders:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+    assignMyselfToOrder:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
