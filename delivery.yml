@@ -13,3 +13,8 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
+logging:
+  level:
+    org.apache.http.wire: 'DEBUG'
+    httpclient.wire.header: 'DEBUG'
+    org.apache.commons.httpclient: 'DEBUG'
